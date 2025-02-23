@@ -1,5 +1,6 @@
-import styles from "./Profile.module.css";
 import clsx from "clsx";
+
+import styles from "./Profile.module.css";
 
 export default function Profile({
   name,

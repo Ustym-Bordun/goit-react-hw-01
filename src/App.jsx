@@ -1,17 +1,17 @@
-// import "./App.css";
-
 import Section from "./components/Section/Section";
 import Container from "./components/Container/Container";
 import Heading from "./components/Heading/Heading";
 
 import Profile from "./components/Profile/Profile";
 import FriendList from "./components/FriendList/FriendList";
+import TransactionHistory from "./components/TransactionHistory/TransactionHistory";
 
-import profileData from "./data/userData.json";
-import friendsData from "./data/friends.json";
+import userData from "./data/userData.json";
+import friends from "./data/friends.json";
+import transactions from "./data/transactions.json";
 
 function App() {
-  const { username, tag, location, avatar, stats } = profileData;
+  const { username, tag, location, avatar, stats } = userData;
 
   return (
     <>
@@ -27,13 +27,10 @@ function App() {
           />
 
           <Heading title="Task 2 - FriendList" top bottom />
-          <FriendList friends={friendsData} />
+          <FriendList friends={friends} />
 
-          <Heading title="Task 3 -" top bottom />
-          <p>Task 3 -</p>
-
-          <Heading title="Task 4 -" top bottom />
-          <p>Task 4 -</p>
+          <Heading title="Task 3 - TransactionHistory" top bottom />
+          <TransactionHistory items={transactions} />
         </Container>
       </Section>
     </>

@@ -1,11 +1,8 @@
-import styles from "./FriendListItem.module.css";
 import clsx from "clsx";
 
+import styles from "./FriendListItem.module.css";
+
 export default function FriendListItem({ avatar, name, isOnline }) {
-  console.log(styles);
-
-  // console.log(isOnline);
-
   const status = isOnline ? "Online" : "Offline";
   return (
     <>
