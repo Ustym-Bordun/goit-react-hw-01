@@ -1,0 +1,19 @@
+.image {
+  width: 90%;
+}
+
+.text {
+  font-size: 20px;
+}
+.title {
+  font-size: 28px;
+  font-weight: 500;
+  font-weight: 600;
+}
+
+.text.online {
+  color: #028002;
+}
+.text.offline {
+  color: #ff0d0c;
+}

@@ -1,35 +1,36 @@
 import styles from "./Profile.module.css";
+import clsx from "clsx";
 
-export default function Profile(props) {
-  console.log(styles);
-
-  // { name, tag, location, image, stats }
-  console.log(props);
+export default function Profile({
+  name,
+  tag,
+  location,
+  image,
+  stats: { followers, views, likes },
+}) {
+  // console.log(styles);
 
   return (
-    <div>
-      <div>
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"
-          alt="User avatar"
-        />
-        <p>Petra Marica</p>
-        <p>@pmarica</p>
-        <p>Salvador, Brasil</p>
+    <div className={styles.card}>
+      <div className={styles.topPart}>
+        <img className={styles.photo} src={image} alt={name} />
+        <p className={clsx(styles.text, styles.name)}>{name}</p>
+        <p className={clsx(styles.text, styles.shaded)}>@{tag}</p>
+        <p className={clsx(styles.text, styles.shaded)}>{location}</p>
       </div>
 
-      <ul>
-        <li>
-          <span>Followers</span>
-          <span>1000</span>
+      <ul className={styles.list}>
+        <li className={styles.item}>
+          <span className={styles.text}>Followers</span>
+          <span className={clsx(styles.text, styles.number)}>{followers}</span>
         </li>
-        <li>
-          <span>Views</span>
-          <span>2000</span>
+        <li className={styles.item}>
+          <span className={styles.text}>Views</span>
+          <span className={clsx(styles.text, styles.number)}>{views}</span>
         </li>
-        <li>
-          <span>Likes</span>
-          <span>3000</span>
+        <li className={styles.item}>
+          <span className={styles.text}>Likes</span>
+          <span className={clsx(styles.text, styles.number)}>{likes}</span>
         </li>
       </ul>
     </div>
